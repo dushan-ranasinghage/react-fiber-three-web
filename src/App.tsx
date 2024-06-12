@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { Canvas } from '@react-three/fiber'
 
 import Box from './components/Box';
+import Porsche from './models/Porsche';
 
 const App: React.FC = () => {
   const spotLightRef = useRef<THREE.SpotLight>(null);
@@ -15,8 +16,9 @@ const App: React.FC = () => {
       {spotLightRef.current && <spotLightHelper args={[spotLightRef.current]} color={0x000000} />}
       <pointLight ref={pointLightRef} position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
       {pointLightRef.current && <pointLightHelper args={[pointLightRef.current]} color={0x000000} />}
-      <Box position={[1.2, 0, 0]} />
-      <Box position={[-1.2, 0, 0]} rotate />
+      {/* <Box position={[1.2, 0, 0]} />
+      <Box position={[-1.2, 0, 0]} rotate /> */}
+      <Porsche scale={1} position={[-0.5, -0.18, 0]} rotation={[0, Math.PI / 5, 0]} />
     </Canvas>
   )
 }

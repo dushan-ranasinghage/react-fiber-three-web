@@ -13,6 +13,14 @@ interface BoxProps extends React.ComponentProps<'mesh'> {
   rotate?: boolean;
 }
 
+/**
+ * 
+ * @example <Box position={[1.2, 0, 0]} />
+ * @example <Box position={[1.2, 0, 0]} rotate />
+ * 
+ * @param param0 
+ * @returns 
+ */
 const Box: React.FC<BoxProps> = ({ rotate = false, ...meshProps }) => {
   // This reference gives us direct access to the THREE.Mesh object
   const ref = useRef<THREE.Mesh>(null!)
